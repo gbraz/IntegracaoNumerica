@@ -14,6 +14,7 @@
 #include "Funcao_03.hpp"
 #include "Funcao_04.hpp"
 #include "Funcao_05.hpp"
+#include "Funcao_ES.hpp"
 #include "Integracao.hpp"
 #include "GL_P1.hpp"
 #include "GL_P2.hpp"
@@ -304,6 +305,29 @@ int main(int argc, const char * argv[])
     else
     {
         // Exponenciação
+        cout << "\n\nVocê escolheu Exponenciação \n\n";
+        
+        int exponen_tipo = 0;
+        while (exponen_tipo < 1 || exponen_tipo > 2)
+        {
+            cout << "Escolha a exponenciação adequada. \n";
+            cout << "1 - Exponenciação simples.  \n";
+            cout << "2 - Exponenciação dupla.   \n";
+            cin  >> exponen_tipo;
+        }
+
+        cout << "Entre o intervalo de integração (a, b): \n";
+        cout << "a = ";
+        cin  >>  a;
+        cout << "\nb = ";
+        cin  >> b;
+
+        if(exponen_tipo == 1){
+            integrando = new Funcao_ES(integrando, a, b);
+            pintegrObj = new GL_P2(integrando, a, b, numero_de_particoes, precisao);
+            integral = pintegrObj->integrar();
+        }
+
     }
     
 
