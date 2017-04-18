@@ -15,6 +15,7 @@
 #include "Funcao_04.hpp"
 #include "Funcao_05.hpp"
 #include "Funcao_ES.hpp"
+#include "Funcao_ED.hpp"
 #include "Integracao.hpp"
 #include "GL_P1.hpp"
 #include "GL_P2.hpp"
@@ -324,6 +325,11 @@ int main(int argc, const char * argv[])
 
         if(exponen_tipo == 1){
             integrando = new Funcao_ES(integrando, a, b);
+            pintegrObj = new GL_P2(integrando, a, b, numero_de_particoes, precisao);
+            integral = pintegrObj->integrar();
+        }
+        else{
+            integrando = new Funcao_ED(integrando, a, b);
             pintegrObj = new GL_P2(integrando, a, b, numero_de_particoes, precisao);
             integral = pintegrObj->integrar();
         }
