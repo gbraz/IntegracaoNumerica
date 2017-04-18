@@ -21,7 +21,7 @@ class Funcao_ED : public Funcao
 
 public:
 	Funcao_ED(Funcao *f, double a, double b){
-		this->integrando = f;
+		integrando = f;
 		this->a = a;
 		this->b = b;
 	}

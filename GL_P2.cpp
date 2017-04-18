@@ -8,6 +8,7 @@
 
 #include "GL_P2.hpp"
 #include <math.h>
+#include <iostream>
 
 GL_P2::GL_P2(Funcao * f, double a, double b, int N, double epsilon){
     
@@ -46,6 +47,7 @@ double GL_P2::integrar(){
         double linf, lsup;
         
         integral = GL_P2_integracao(m_pIntegrando, m_lInf, m_lSup);
+        std::cout << "TESTE\n";
         
         do
         {

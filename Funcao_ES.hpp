@@ -10,8 +10,8 @@
 #define Funcao_ES_hpp
 
 #include <math.h>
-
 #include "Funcao.hpp"
+
 
 class Funcao_ES : public Funcao
 {	
@@ -21,13 +21,13 @@ class Funcao_ES : public Funcao
 
 public:
 	Funcao_ES(Funcao *f, double a, double b){
-		this->integrando = f;
+		integrando = f;
 		this->a = a;
 		this->b = b;
 	}
 
-    double f(double x)
-    {
+    double f(double x){
+
         return integrando->f((((a + b) + (b - a)*tanh(x))/2)) * (b - a)*(1 - tanh(x))/2;
     }
 };
