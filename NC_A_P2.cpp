@@ -8,6 +8,7 @@
 
 #include "NC_A_P2.hpp"
 #include <math.h>
+#include <iostream>
 
 NC_A_P2::NC_A_P2(Funcao * f, double a, double b, int N, double epsilon)
 {
@@ -63,6 +64,10 @@ double NC_A_P2::integrar()
                 
                 integral += NC_A_P2_integracao(m_pIntegrando, linf, lsup);
             }
+            std::cout << "\nTESTE integral " << integral;
+            std::cout << "\nTESTE old integral " << oldintegral;
+            std::cout << "\nTESTE precisao " << m_precisao;
+            std::cout << std::endl;
             
             
         } while (fabs(integral - oldintegral) > m_precisao);

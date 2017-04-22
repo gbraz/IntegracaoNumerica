@@ -8,6 +8,7 @@
 
 #include "NC_F_P1.hpp"
 #include <math.h>
+#include <iostream>
 
 NC_F_P1::NC_F_P1(Funcao * f, double a, double b, int N, double epsilon)
 {
@@ -21,6 +22,7 @@ NC_F_P1::NC_F_P1(Funcao * f, double a, double b, int N, double epsilon)
 
 double NC_F_P1::integrar()
 {
+        int a;
     double integral = 0.0;
     
     if (m_particao >= 1)
@@ -61,6 +63,11 @@ double NC_F_P1::integrar()
                 linf = m_lInf + i*step;
                 lsup = linf   + step;
                 
+                std::cout << "\nTESTE linf " << linf;
+                std::cout << "\nTESTE lsup " << lsup;
+                std::cout << "\nTESTE integral " << integral;
+                std::cout << std::endl;
+                //std::cin >> a;
                 integral += NC_F_P1_integracao(m_pIntegrando, linf, lsup);
             }
             

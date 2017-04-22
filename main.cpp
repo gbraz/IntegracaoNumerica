@@ -339,16 +339,19 @@ int main(int argc, const char * argv[])
             cout << "\nb = ";
             cin  >> b;
         }
+        
+        Funcao *integrando2;
 
         if(exponen_tipo == 1){
 
-            integrando = new Funcao_ES(integrando, a, b);
-            pintegrObj = new GL_P2(integrando, -4, 4, numero_de_particoes, precisao);
+            integrando2 = new Funcao_ES(integrando, a, b);
+            //pintegrObj = new GL_P2(integrando2, -10, 10, numero_de_particoes, precisao);
+            pintegrObj = new NC_A_P2(integrando2, -10, 10, numero_de_particoes, precisao);
             integral = pintegrObj->integrar();
         }
         else{
             integrando = new Funcao_ED(integrando, a, b);
-            pintegrObj = new GL_P2(integrando, -4, 4, numero_de_particoes, precisao);
+            pintegrObj = new GL_P2(integrando, -10, 10, numero_de_particoes, precisao);
             integral = pintegrObj->integrar();
         }
 
