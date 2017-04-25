@@ -313,6 +313,61 @@ int main(int argc, const char * argv[])
 
             }
         }
+        if (gauss_tipo == 2){
+            // Gauss-Hermite
+        
+            switch (grau_polinomio_substituicao)
+            {
+                case 1:
+                    pintegrObj = new GH_P2(integrando, a, b, numero_de_particoes, precisao);
+                    integral   = pintegrObj->integrar();
+                    break;
+                    
+                case 2:
+                    pintegrObj = new GH_P3(integrando, a, b, numero_de_particoes, precisao);
+                    integral   = pintegrObj->integrar();
+                    break;
+
+                case 3:
+                    pintegrObj = new GH_P4(integrando, a, b, numero_de_particoes, precisao);
+                    integral   = pintegrObj->integrar();
+                    break;
+
+            }
+
+
+        }
+
+        if (gauss_tipo == 3){
+            // Gauss-Laguerre
+        
+            switch (grau_polinomio_substituicao)
+            {
+                case 1:
+                    pintegrObj = new GL_P1(integrando, a, b, numero_de_particoes, precisao);
+                    integral   = pintegrObj->integrar();
+                    break;
+                    
+                case 2:
+                    pintegrObj = new GL_P2(integrando, a, b, numero_de_particoes, precisao);
+                    integral   = pintegrObj->integrar();
+                    break;
+
+                case 3:
+                    pintegrObj = new GL_P3(integrando, a, b, numero_de_particoes, precisao);
+                    integral   = pintegrObj->integrar();
+                    break;
+
+                case 4:
+                    pintegrObj = new GL_P4(integrando, a, b, numero_de_particoes, precisao);
+                    integral   = pintegrObj->integrar();
+                    break;
+
+            }
+
+
+        }
+
     }
     else
     {
