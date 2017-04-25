@@ -35,8 +35,8 @@ double GLA_P4::GLA_P4_integracao(Funcao * f)
 
 
 
-    return	w1*(m_pIntegrando->f(x1)/exp(-x1)
-     		+ w2*(m_pIntegrando->f(x2)/exp(-x2)
-     		+ w3*(m_pIntegrando->f(x3)/exp(-x3)
-            + w4*(m_pIntegrando->f(x4)/exp(-x4);
+    return	w1 * m_pIntegrando->f(x1)/exp(-x1)
+     		+ w2 * m_pIntegrando->f(x2)/exp(-x2)
+     		+ w3 * m_pIntegrando->f(x3)/exp(-x3)
+            + w4 * m_pIntegrando->f(x4)/exp(-x4);
 }

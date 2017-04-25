@@ -33,7 +33,7 @@ double GLA_P3::GLA_P3_integracao(Funcao * f)
 
 
 
-    return	w1*(m_pIntegrando->f(x1)/exp(-x1)
-     		+ w2*(m_pIntegrando->f(x2)/exp(-x2)
-     		+ w3*(m_pIntegrando->f(x3)/exp(-x3);
+    return	w1 * m_pIntegrando->f(x1)/exp(-x1)
+     		+ w2 * m_pIntegrando->f(x2)/exp(-x2)
+     		+ w3 * m_pIntegrando->f(x3)/exp(-x3);
 }

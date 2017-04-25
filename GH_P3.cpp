@@ -10,7 +10,7 @@
 #include <math.h>
 #include <iostream>
 
-GH_P3::GH_P3(Funcao * f, int N, double epsilon){
+GH_P3::GH_P3(Funcao * f){
     
     m_pIntegrando = f;
     
@@ -18,7 +18,7 @@ GH_P3::GH_P3(Funcao * f, int N, double epsilon){
 
 double GH_P3::integrar(){
         
-    return GH_P3_integracao(m_pIntegrando, m_lInf, m_lSup);
+    return GH_P3_integracao(m_pIntegrando);
     
 }
 
@@ -31,7 +31,7 @@ double GH_P3::GH_P3_integracao(Funcao * f)
     double w2 = 1.181635;
 
 
-    return	w1*(m_pIntegrando->f(x1)/exp(-x1*x1))
-     		+ w2*(m_pIntegrando->f(x2)/exp(-x2*x2))
-     		+ w3*(m_pIntegrando->f(x3)/exp(-x3*x3));
+    return	w2*(m_pIntegrando->f(x1)/exp(-x1*x1))
+     		+ w1*(m_pIntegrando->f(x2)/exp(-x2*x2))
+     		+ w2*(m_pIntegrando->f(x3)/exp(-x3*x3));
 }

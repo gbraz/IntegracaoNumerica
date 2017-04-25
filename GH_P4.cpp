@@ -10,7 +10,7 @@
 #include <math.h>
 #include <iostream>
 
-GH_P4::GH_P4(Funcao * f, int N, double epsilon){
+GH_P4::GH_P4(Funcao * f){
     
     m_pIntegrando = f;
     
@@ -18,7 +18,7 @@ GH_P4::GH_P4(Funcao * f, int N, double epsilon){
 
 double GH_P4::integrar(){
         
-    return GH_P4_integracao(m_pIntegrando, m_lInf, m_lSup);
+    return GH_P4_integracao(m_pIntegrando);
     
 }
 

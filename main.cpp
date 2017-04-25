@@ -22,6 +22,13 @@
 #include "GL_P2.hpp"
 #include "GL_P3.hpp"
 #include "GL_P4.hpp"
+#include "GH_P2.hpp"
+#include "GH_P3.hpp"
+#include "GH_P4.hpp"
+#include "GLA_P2.hpp"
+#include "GLA_P3.hpp"
+#include "GLA_P4.hpp"
+#include "GC.hpp"
 #include "NC_A_P0.hpp"
 #include "NC_A_P1.hpp"
 #include "NC_A_P2.hpp"
@@ -265,6 +272,30 @@ int main(int argc, const char * argv[])
             }   
             
         }
+        if (gauss_tipo == 3){
+            
+            // Gauss-Laguerre
+            cout << "\n\nVocê escolheu quadratura de Gauss-Laguerre\n\n";
+            
+            while (grau_polinomio_substituicao < 2 || grau_polinomio_substituicao > 4)
+            {
+                cout << "\n\nEntre o grau do polinômio de substituição (2-4)\n\n";
+                cin  >> grau_polinomio_substituicao;
+            }   
+            
+        }
+        if (gauss_tipo == 4){
+            
+            // Gauss-Chebyshev
+            cout << "\n\nVocê escolheu quadratura de Gauss-Chebyshev\n\n";
+            
+            while (grau_polinomio_substituicao < 1 || grau_polinomio_substituicao > 10)
+            {
+                cout << "\n\nEntre o N do polinômio de substituição\n\n";
+                cin  >> grau_polinomio_substituicao;
+            }   
+            
+        }
         
         cout << "Entre o intervalo de integração (a, b): \n";
         cout << "a = ";
@@ -326,23 +357,22 @@ int main(int argc, const char * argv[])
         
             switch (grau_polinomio_substituicao)
             {
-                case 1:
-                    pintegrObj = new GH_P2(integrando, a, b, numero_de_particoes, precisao);
+                case 2:
+                    pintegrObj = new GH_P2(integrando);
                     integral   = pintegrObj->integrar();
                     break;
                     
-                case 2:
-                    pintegrObj = new GH_P3(integrando, a, b, numero_de_particoes, precisao);
+                case 3:
+                    pintegrObj = new GH_P3(integrando);
                     integral   = pintegrObj->integrar();
                     break;
 
-                case 3:
-                    pintegrObj = new GH_P4(integrando, a, b, numero_de_particoes, precisao);
+                case 4:
+                    pintegrObj = new GH_P4(integrando);
                     integral   = pintegrObj->integrar();
                     break;
 
             }
-
 
         }
 
@@ -351,29 +381,30 @@ int main(int argc, const char * argv[])
         
             switch (grau_polinomio_substituicao)
             {
-                case 1:
-                    pintegrObj = new GL_P1(integrando, a, b, numero_de_particoes, precisao);
+                case 2:
+                    pintegrObj = new GLA_P2(integrando);
                     integral   = pintegrObj->integrar();
                     break;
                     
-                case 2:
-                    pintegrObj = new GL_P2(integrando, a, b, numero_de_particoes, precisao);
-                    integral   = pintegrObj->integrar();
-                    break;
-
                 case 3:
-                    pintegrObj = new GL_P3(integrando, a, b, numero_de_particoes, precisao);
+                    pintegrObj = new GLA_P3(integrando);
                     integral   = pintegrObj->integrar();
                     break;
 
                 case 4:
-                    pintegrObj = new GL_P4(integrando, a, b, numero_de_particoes, precisao);
+                    pintegrObj = new GLA_P4(integrando);
                     integral   = pintegrObj->integrar();
                     break;
 
             }
 
+        }
 
+        if (gauss_tipo == 4){
+            // Gauss-Chebyshev
+        
+            pintegrObj = new GC(integrando, grau_polinomio_substituicao);
+            integral   = pintegrObj->integrar();
         }
 
     }
