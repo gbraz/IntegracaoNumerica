@@ -253,8 +253,16 @@ int main(int argc, const char * argv[])
                 cin  >> grau_polinomio_substituicao;
             }
         }
-        else
-        {
+        if (gauss_tipo == 2){
+            
+            // Gauss-Hermite
+            cout << "\n\nVocê escolheu quadratura de Gauss-Hermite\n\n";
+            
+            while (grau_polinomio_substituicao < 2 || grau_polinomio_substituicao > 4)
+            {
+                cout << "\n\nEntre o grau do polinômio de substituição (2-4)\n\n";
+                cin  >> grau_polinomio_substituicao;
+            }   
             
         }
         
