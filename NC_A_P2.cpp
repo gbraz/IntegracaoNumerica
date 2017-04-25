@@ -54,7 +54,7 @@ double NC_A_P2::integrar()
             integral    = 0.0;
             
             N = N*2;
-            
+
             step = (m_lSup - m_lInf)/N;
             
             for (int i = 0; i < N; i++)
@@ -64,10 +64,6 @@ double NC_A_P2::integrar()
                 
                 integral += NC_A_P2_integracao(m_pIntegrando, linf, lsup);
             }
-            std::cout << "\nTESTE integral " << integral;
-            std::cout << "\nTESTE old integral " << oldintegral;
-            std::cout << "\nTESTE precisao " << m_precisao;
-            std::cout << std::endl;
             
             
         } while (fabs(integral - oldintegral) > m_precisao);

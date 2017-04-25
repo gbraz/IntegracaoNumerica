@@ -33,21 +33,6 @@ public:
 
     	g_S = integrando->f(Xz) * ((b - a)/2) *(1 - tanh(x)*tanh(x));
         return g_S;
-    	/*
-    	f_Xz = integrando->f(Xz);
-    	std::cout << "\nTESTE a:" << a;
-    	std::cout << "\nTESTE b:" << b;
-    	std::cout << "\nTESTE X:" << x;
-    	std::cout << "\nTESTE Xz z(x):" << Xz;
-    	f2 = integrando->f(2);
-    	std::cout << "\nTESTE f(2) " << f2;
-    	std::cout << "\nTESTE f(Xz) " << f_Xz;
-    	std::cout << "\nTESTE g(s) " << g_S;
-        std::cout << std::endl;
-    	int k;
-        std::cin >> k;
-        return integrando->f(Xz) * (cosh(Xz)/ (cosh(y2)*cosh(y2))); 
-        */
     }
 
     double z(double x){

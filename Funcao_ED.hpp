@@ -27,29 +27,24 @@ public:
 		integrando = func;
 	}
 
-    double f(double x){	
+    double f(double s){	
+        
+        double dxdu;
+        dxdu = (b - a)*(M_PI/4)*cosh(s)/(cosh(u(s)) *cosh(u(s)));
 
-        double p1, p2;
-        double y = (M_PI/2) * sinh(x);
-
-        p1 = integrando->f(z(x));
-
-        p2 = ((b - a) * (M_PI/4) * cosh(x) / (cosh(y)*cosh(y)));
-        /*
-        std::cout << "TESTE z:" << z << std::endl;
-        std::cout << "TESTE p1:" << p1 << std::endl;
-        std::cout << "TESTE p2:" << p2 << std::endl;
-        std::cout << "TESTE res:" << res << std::endl;
-        */
-
-    	return p1 * p2;
+        return integrando->f(x(s)) * dxdu;
     }
 
-    double z(double x){
+    double x(double s){
 
-    	double y = (M_PI/2) * sinh(x);
-        return (a + b + (b - a)*tanh(y))/2;
+        return (a + b)/2 + (b - a)*tanh(u(s))/2;
     }
+
+    double u(double s){
+
+        return (M_PI/2) * sinh(s);
+    }
+
 };
 
 
