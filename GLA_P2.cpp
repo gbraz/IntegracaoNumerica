@@ -10,7 +10,7 @@
 #include <math.h>
 #include <iostream>
 
-GLA_P2::GLA_P2(Funcao * f, int N, double epsilon){
+GLA_P2::GLA_P2(Funcao * f){
     
     m_pIntegrando = f;
     
@@ -18,7 +18,7 @@ GLA_P2::GLA_P2(Funcao * f, int N, double epsilon){
 
 double GLA_P2::integrar(){
         
-    return GLA_P2_integracao(m_pIntegrando, m_lInf, m_lSup);
+    return GLA_P2_integracao(m_pIntegrando);
     
 }
 
