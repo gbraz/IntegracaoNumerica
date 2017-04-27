@@ -49,3 +49,38 @@ public:
 
 
 #endif /* Funcao_ED_hpp */
+
+/*
+double substituicaoExp(Funcao *fun, double a, double b, double precisao, int tipoquadratura, int numero_de_particoes){
+
+    int n = 1;
+    double oldIntegral;
+    
+    integrando = new Funcao_ED(fun, a, b, );
+    switch(tipoquadratura){
+        case 0:
+            pintegrObj = new NC_A_P0(integrando, a, b, numero_de_particoes, precisao);
+            integral   = pintegrObj->integrar();
+            break;
+            
+        case 1:
+            pintegrObj = new NC_A_P1(integrando, a, b, numero_de_particoes, precisao);
+            integral   = pintegrObj->integrar();
+            break;
+            
+        case 2:
+            pintegrObj = new NC_A_P2(integrando, a, b, numero_de_particoes, precisao);
+            integral   = pintegrObj->integrar();
+            break;
+
+        case 3:
+            pintegrObj = new NC_A_P3(integrando, a, b, numero_de_particoes, precisao);
+            integral   = pintegrObj->integrar();
+            break;
+
+        case 4:
+            pintegrObj = new NC_A_P4(integrando, a, b, numero_de_particoes, precisao);
+            integral   = pintegrObj->integrar();
+            break;
+    }
+}*/

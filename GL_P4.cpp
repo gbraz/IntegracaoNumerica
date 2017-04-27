@@ -74,8 +74,8 @@ double GL_P4::integrar(){
 
 double GL_P4::GL_P4_integracao(Funcao * f, double a, double b)
 {
-    return (b-a)/2 * ( (0.34785)*m_pIntegrando->f(((b-a)*(-0.86114) + (a+b))/2)
-                      + (0.65215)*m_pIntegrando->f(((b-a)*(-0.33998) + (a+b))/2)
-                      + (0.34785)*m_pIntegrando->f(((b-a)*(0.33998) + (a+b))/2)
-                      + (0.65215)*m_pIntegrando->f(((b-a)*(0.86114) + (a+b))/2));
+    return (b-a)/2 * ( (0.34784)*m_pIntegrando->f(((b-a)*(-0.86114) + (a+b))/2)
+                      + (0.65216)*m_pIntegrando->f(((b-a)*(-0.33998) + (a+b))/2)
+                      + (0.34784)*m_pIntegrando->f(((b-a)*(0.33998) + (a+b))/2)
+                      + (0.65216)*m_pIntegrando->f(((b-a)*(0.86114) + (a+b))/2));
 }

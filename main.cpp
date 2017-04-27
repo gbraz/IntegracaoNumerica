@@ -441,14 +441,14 @@ int main(int argc, const char * argv[])
 
             integrando2 = new Funcao_ES(integrando, a, b);
             double oldIntegral;
-            pintegrObj = new NC_A_P2(integrando2, -n, n, numero_de_particoes, precisao);
+            pintegrObj = new GL_P4(integrando2, -n, n, numero_de_particoes, precisao);
             integral = pintegrObj->integrar();
             
             do{
 
                 n++;
                 oldIntegral = integral;
-                pintegrObj = new NC_A_P2(integrando2, -n, n, numero_de_particoes, precisao);
+                pintegrObj = new GL_P4(integrando2, -n, n, numero_de_particoes, precisao);
                 integral = pintegrObj->integrar();
 
                 if(isnan(integral))
@@ -484,51 +484,3 @@ int main(int argc, const char * argv[])
     
     return 0;
 }
-
-/*
-double substituicaoExp(Funcao *fun, double a, double b, double precisao, int tipoquadratura, int numero_de_particoes){
-
-    int n = 1;
-    double oldIntegral;
-    
-    integrando = new Funcao_ED(fun, a, b, );
-    switch(tipoquadratura){
-        case 0:
-            pintegrObj = new NC_A_P0(integrando, a, b, numero_de_particoes, precisao);
-            integral   = pintegrObj->integrar();
-            break;
-            
-        case 1:
-            pintegrObj = new NC_A_P1(integrando, a, b, numero_de_particoes, precisao);
-            integral   = pintegrObj->integrar();
-            break;
-            
-        case 2:
-            pintegrObj = new NC_A_P2(integrando, a, b, numero_de_particoes, precisao);
-            integral   = pintegrObj->integrar();
-            break;
-
-        case 3:
-            pintegrObj = new NC_A_P3(integrando, a, b, numero_de_particoes, precisao);
-            integral   = pintegrObj->integrar();
-            break;
-
-        case 4:
-            pintegrObj = new NC_A_P4(integrando, a, b, numero_de_particoes, precisao);
-            integral   = pintegrObj->integrar();
-            break;
-    }
-
-    integral = pintegrObj->integrar();
-    
-    do{
-
-        n++;
-        oldIntegral = integral;
-        pintegrObj = new NC_A_P2(integrando, -n, n, numero_de_particoes, precisao);
-        integral = pintegrObj->integrar();
-
-        if(isnan(integral))
-            integral = oldIntegral;
-    } while(fabs(integral - oldIntegral) > precisao); 
-}*/
