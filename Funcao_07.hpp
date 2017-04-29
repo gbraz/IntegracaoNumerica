@@ -11,13 +11,12 @@
 
 #include <math.h>
 
-#include "Funcao.hpp"
+#include "Funcao2.hpp"
 
-class Funcao_07 : public Funcao
-{
+class Funcao_07 : public Funcao2{
+
 public:
-    double f(double x, double y)
-    {
+    double f(double x, double y){
         return 2*y*sin(x) + cos(x)*cos(x);
     }
 };

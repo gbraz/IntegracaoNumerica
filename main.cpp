@@ -15,6 +15,7 @@
 #include "Funcao_04.hpp"
 #include "Funcao_05.hpp"
 #include "Funcao_06.hpp"
+#include "Funcao_07.hpp"
 #include "Funcao_ES.hpp"
 #include "Funcao_ED.hpp"
 #include "Integracao.hpp"
@@ -70,6 +71,7 @@ int main(int argc, const char * argv[])
     cout << "\t4 - sin(x) \n";
     cout << "\t5 - x^3 -x^2 -6x \n";
     cout << "\t6 - Comprimento da curva, c(x) = 2*sqrt(x) no intervalo [0, 2]\n";
+    cout << "\t7 - 2ysen(x) + cos²(x)\n";
     cin  >> id_integrando;
     
     switch (id_integrando)
@@ -91,6 +93,9 @@ int main(int argc, const char * argv[])
             break;
         case 6:
             integrando = new Funcao_06;
+            break;
+        case 7:
+            integrando = new Funcao_07;
             break;
     }
 
@@ -435,7 +440,7 @@ int main(int argc, const char * argv[])
         }
         
         Funcao *integrando2;
-        int n = 1;
+        double n = 1;
         
         if(exponen_tipo == 1){
 
